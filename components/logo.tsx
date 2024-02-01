@@ -1,10 +1,18 @@
 import Image from "next/image";
+import { cn } from "@/lib/utils";
+import localFont from "next/font/local";
+
+const headingFont = localFont({
+  src: "../public/fonts/font.woff2",
+});
 
 const logo = () => {
   return (
     <div className="hover:opacity-75 transition items-center gap-x-2-hidden md:flex">
       <Image src="/logo.svg" alt="Logo" width="30" height="30" />
-      <p className="text-lg text-neutral-700 pb-1">Taskify</p>
+      <p className={cn("text-lg text-neutral-700 pb-1", headingFont.className)}>
+        Taskify
+      </p>
     </div>
   );
 };
